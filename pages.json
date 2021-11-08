@@ -7,7 +7,7 @@
 				"enablePullDownRefresh": false
 			}
 
-		},
+		}, 
 		{
 			"path": "pages/demo/demo",
 			"style": {
