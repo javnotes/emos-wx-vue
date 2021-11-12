@@ -32,4 +32,7 @@
   background-color: #3474FF;
   color: #fff;
 }
+.register-container .register-btn:active {
+  background-color: #0052FF;
+}
 

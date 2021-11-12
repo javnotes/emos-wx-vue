@@ -17,9 +17,52 @@
 			};
 		},
 		methods: {
-			toRegister: function() {
-				uni.navigateTo({
-					url: '../register/register'
+			register: function() {
+				let that = this;
+				if (that.registerCode == null || that.registerCode.length == 0) {
+					uni.showToast({
+						title: '邀请码不能为空',
+						icon: 'none'
+					});
+					return;
+				} else if (/^[0-9]{6}$/.test(that.registerCode) == false) {
+					uni.showToast({
+						title: '邀请码必须是6为数字',
+						icon: 'none'
+					});
+					return;
+				}
+
+				uni.login({
+					provider: "weixin",
+					success: function(resp) {
+						// console.log(resp.code)
+						let code = resp.code;
+						uni.getUserInfo({
+							provider: "weixin",
+							// desc: "获取用户信息"
+							success: function(resp) {
+								let nickName = resp.userInfo.nickName;
+								let avatarUrl = resp.userInfo.avatarUrl;
+								// console.log(nickName);
+								// console.log(avatarUrl);
+
+								let data = {
+									code: code,
+									nickname: nickName,
+									photo: avatarUrl,
+									registerCode: that.registerCode
+								};
+								// 发送ajax请求：请求地址、请求方法类型：get/post、上传的数据、匿名函数：接收响应
+								that.ajax(that.url.register, 'POST', data, function(resp) {
+									let permission = resp.data.permission;
+									uni.setStorageSync('permission', permission);
+									console.log(permission);
+									//跳转到index页面
+								});
+							}
+						});
+					}
 				});
 			}
 		}
