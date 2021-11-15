@@ -26,6 +26,10 @@ export function createApp() {
 let baseUrl = "http://192.168.3.7:8080/emos-wx-api"
 Vue.prototype.url = {
 	register: baseUrl + "/user/register",
+
+	login: baseUrl + "/user/login",
+
+
 }
 
 Vue.prototype.ajax = function(url, method, data, fun) {

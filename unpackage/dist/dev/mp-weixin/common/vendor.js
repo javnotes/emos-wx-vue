@@ -8596,9 +8596,9 @@ function resolveLocaleChain(locale) {
 
 /***/ }),
 /* 5 */
-/*!******************************************************************!*\
-  !*** /Users/vuffy/Documents/HBuilderProjects/emos-wx/pages.json ***!
-  \******************************************************************/
+/*!****************************************************************!*\
+  !*** /Users/luf/Documents/HBuilderProjects/emos-wx/pages.json ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

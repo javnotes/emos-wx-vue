@@ -36,7 +36,7 @@
 				uni.login({
 					provider: "weixin",
 					success: function(resp) {
-						// console.log(resp.code)
+						console.log(resp.code)
 						let code = resp.code;
 						uni.getUserInfo({
 							provider: "weixin",
@@ -44,8 +44,8 @@
 							success: function(resp) {
 								let nickName = resp.userInfo.nickName;
 								let avatarUrl = resp.userInfo.avatarUrl;
-								// console.log(nickName);
-								// console.log(avatarUrl);
+								console.log(nickName);
+								console.log(avatarUrl);
 
 								let data = {
 									code: code,
@@ -58,7 +58,10 @@
 									let permission = resp.data.permission;
 									uni.setStorageSync('permission', permission);
 									console.log(permission);
-									//跳转到index页面
+									// 跳转到index页面
+									uni.switchTab({
+										url: '../index/index'
+									});
 								});
 							}
 						});

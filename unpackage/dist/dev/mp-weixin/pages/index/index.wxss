@@ -1,24 +1,68 @@
-
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.page {
+  background-color: #EEEEF4;
 }
-.logo {
-	height: 200rpx;
-	width: 200rpx;
-	margin-top: 200rpx;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 50rpx;
+.swiper {
+  height: 233px;
 }
-.text-area {
-	display: flex;
-	justify-content: center;
+.swiper image {
+  width: 100% !important;
 }
-.title {
-	font-size: 36rpx;
-	color: #8f8f94;
+.notify-container {
+  background-color: #fff;
+  padding: 25rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.notify-container .notify-title {
+  font-size: 34rpx;
+  color: #3474FF;
+  margin-bottom: 10rpx;
+}
+.notify-container .notify-title .notify-icon {
+  width: 38rpx;
+  vertical-align: -8rpx;
+  margin-right: 5rpx;
+}
+.notify-container .notify-content {
+  font-size: 30rpx;
+  color: #333;
+}
+.notify-container .notify-content:before {
+  display: inline-block;
+  content: "";
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  background-color: red;
+  margin-left: 18rpx;
+  margin-right: 15rpx;
+  vertical-align: 3rpx;
+}
+.notify-container .more-icon {
+  position: absolute;
+  right: 5rpx;
+  width: 60rpx;
+  top: 50rpx;
+}
+.nav-container {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 50rpx 40rpx;
+}
+.nav-container .nav-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50rpx;
+}
+.nav-container .nav-row .nav {
+  text-align: center;
+}
+.nav-container .nav-row .nav .icon {
+  width: 80rpx;
+}
+.nav-container .nav-row .nav .name {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
 }
 
